@@ -17,9 +17,9 @@
 	    <path refid="classpath.base" />
 	  </path>
 	
-	<!--target name="clean">
+	<target name="clean">
 		<delete dir="${dir.build}" />
-	</target-->
+	</target>
 
 	<target name="compile">
 		<mkdir dir="${dir.classes}" />
@@ -48,7 +48,7 @@
 	    <junit printsummary="on" haltonfailure="yes">
 	        <classpath>
 	          <path refid="classpath.test" />
-	          <pathelement location="${dir.build}"/>
+	          <pathelement location="${dir.classes}"/>
 	        </classpath>
 	        <formatter type="brief" usefile="false" />
 	        <batchtest>
@@ -61,7 +61,7 @@
 		<java jar="${dir.jar}/${ant.project.name}.jar" fork="true" />
 	</target>
 
-	<!--target name="clean-build" depends="clean" /-->
+	<target name="clean-build" depends="clean" />
 
-	<target name="main" depends="run" />
+	<target name="main" depends="clean, run" />
 </project>
