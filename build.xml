@@ -17,9 +17,9 @@
 	    <path refid="classpath.base" />
 	  </path>
 	
-	<target name="clean">
+	<!--target name="clean">
 		<delete dir="${dir.build}" />
-	</target>
+	</target-->
 
 	<target name="compile">
 		<mkdir dir="${dir.classes}" />
@@ -27,6 +27,7 @@
 	</target>
 	
 	 <target name="test-compile" depends="compile">
+		<mkdir dir="${dir.classes}" />
 	    <javac srcdir="${dir.test}" destdir="${dir.classes}" includeantruntime="false">
 	    <classpath refid="classpath.test"/>
 	    </javac>
@@ -60,6 +61,7 @@
 		<java jar="${dir.jar}/${ant.project.name}.jar" fork="true" />
 	</target>
 
-	<target name="clean-build" depends="clean,jar" />
-	<target name="main" depends="clean,run" />
+	<!--target name="clean-build" depends="clean" /-->
+
+	<target name="main" depends="run" />
 </project>
