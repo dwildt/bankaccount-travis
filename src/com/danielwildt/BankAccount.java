@@ -11,4 +11,8 @@ public class BankAccount {
 		return this.balance;
 	}
 
+	public void withdraw(int valueToWithdraw) {
+		this.balance -= valueToWithdraw;
+	}
+
 }
