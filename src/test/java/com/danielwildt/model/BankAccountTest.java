@@ -1,4 +1,4 @@
-package com.danielwildt;
+package com.danielwildt.model;
 
 
 import static org.junit.Assert.assertEquals;

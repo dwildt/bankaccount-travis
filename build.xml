@@ -29,7 +29,7 @@
 	 <target name="test-compile" depends="compile">
 		<mkdir dir="${dir.classes}" />
 	    <javac srcdir="${dir.test}" destdir="${dir.classes}" 
-	    	includeantruntime="false">
+	    	includeantruntime="false" excludes="**/api/*.java">
 	    <classpath refid="classpath.test"/>
 	    </javac>
 	  </target>
@@ -53,7 +53,7 @@
 	        </classpath>
 	        <formatter type="brief" usefile="false" />
 	        <batchtest>
-	            <fileset dir="${dir.test}" includes="**/*Test*.java" />
+	            <fileset dir="${dir.test}" includes="**/*Test*.java" excludes="**/api/*.java"/>
 	        </batchtest>
 	    </junit>
 	  </target>
