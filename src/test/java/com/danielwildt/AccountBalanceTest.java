@@ -6,6 +6,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.danielwildt.model.BankAccount;
+
 public class AccountBalanceTest {
 	private BankAccount bankAccount = null; 
 			

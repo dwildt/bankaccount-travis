@@ -31,4 +31,8 @@ hs_err_pid*
 # MAC files
 .DS_Store
 
+# Maven Related
+/target/
+.settings/
+mvnw*
 

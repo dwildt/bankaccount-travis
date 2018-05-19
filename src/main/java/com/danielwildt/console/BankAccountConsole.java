@@ -1,4 +1,6 @@
-package com.danielwildt;
+package com.danielwildt.console;
+
+import com.danielwildt.model.BankAccount;
 
 public class BankAccountConsole {
 

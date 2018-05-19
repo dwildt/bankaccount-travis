@@ -7,7 +7,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.danielwildt.BankAccount;
+import com.danielwildt.model.BankAccount;
 
 public class BankAccountTest {
 

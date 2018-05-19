@@ -1,6 +1,6 @@
 <project name="BankAccount" basedir="." default="test">
-	<property name="dir.src" value="src" />
-	<property name="dir.test" value="test" />
+	<property name="dir.src" value="src/main/java" />
+	<property name="dir.test" value="src/test/java" />
 	<property name="dir.lib" value="lib" />
 	<property name="dir.build" value="build" />
 	<property name="dir.classes" value="${dir.build}/classes" />
@@ -23,12 +23,13 @@
 
 	<target name="compile">
 		<mkdir dir="${dir.classes}" />
-		<javac srcdir="${dir.src}" destdir="${dir.classes}" />
+		<javac srcdir="${dir.src}" destdir="${dir.classes}" excludes="**/api/*.java"/>
 	</target>
 	
 	 <target name="test-compile" depends="compile">
 		<mkdir dir="${dir.classes}" />
-	    <javac srcdir="${dir.test}" destdir="${dir.classes}" includeantruntime="false">
+	    <javac srcdir="${dir.test}" destdir="${dir.classes}" 
+	    	includeantruntime="false">
 	    <classpath refid="classpath.test"/>
 	    </javac>
 	  </target>
