@@ -21,7 +21,7 @@ public class BankAccountTest {
 
 	@Test
 	public void testSimpleAccountBalance() {
-		BankAccount bankAccount = new BankAccount(500);
+		BankAccount bankAccount = new BankAccount("sampleName",500);
 		assertEquals(500, bankAccount.getBalance());
 	}
 

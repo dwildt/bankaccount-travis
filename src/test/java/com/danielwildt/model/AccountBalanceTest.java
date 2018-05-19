@@ -13,7 +13,7 @@ public class AccountBalanceTest {
 			
 	@Before
 	public void setUp() throws Exception {
-		bankAccount = new BankAccount(500);
+		bankAccount = new BankAccount("sampleName",500);
 	}
 
 	@After
