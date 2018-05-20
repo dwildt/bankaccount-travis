@@ -3,57 +3,34 @@ bankaccount-travis
   
 [![Build Status](https://travis-ci.org/dwildt/bankaccount-travis.svg?branch=master)](https://travis-ci.org/dwildt/bankaccount-travis)
 
-Manage Bank Accounts. Simple Java project to show more about Test Driven Development, adding java + ant + extra tools. 
+Manage Bank Accounts. Simple Java project to show more about Test Driven Development and object oriented design, using:  
+
+* Java
+* Ant
+* Maven 
+* Spring Boot
+* Heroku deploy
+* More to come (ant + ivy / cpd / pmd / coverage / other test approaches / gradle option)
 
 
-User Story #001 Regular Customer Withdraw   
------------------------------------------
+Run Ant Build + Unit Tests (use build.xml)
+------------------------------------------
+* To run tests: "ant test"
 
-As a Bank customer
-I can request no more than my account balance 
-In order to keep my account without debt
-	
-	Given that I have a 500 reais balance
-	When I withdraw 501 reais from my account
-	Then a message shows saying "Can't have negative account balance" 
-	
-	Given that I have a 500 reais balance
-	When I withdraw 500 reais from my account
-	Then my balance should be 0 (zero)
+Run Maven Build + Spring Boot API (pom.xml)
+-------------------------------------------
+* download dependencies: "mvn install"
+* run spring-boot API: "mvn spring-boot:run"
+* Sample request:  
+  * add Account: "/add?name=51987654321&balance=500"
+  * check balance: "/balance?name=51987654321"
+  * withdraw: "withdraw?name=51987654321&value=200"
+* Default port is 8088. If you want to change, check resources/application.properties.
 
-
-User Story #002 Special Customer Withdraw   
------------------------------------------
-	
-As a Special Customer 
-I can request more money than my Account Balance 
-In order to use my extra balance
-	 
-	Given that I have a 300 reais balance 
-	    AND an extra limit of 200 reais 
-	When I withdraw 301 reais
-	Then my balance should be -1 reais 
-	
-	Given that I have a 300 reais balance 
-	    AND an extra limit of 200 reais 
-	When I withdraw 500 reais
-	Then my balance should be -200 reais 
-		 
-	Given that I have a 300 reais balance 
-	    AND an extra limit of 200 reais 
-	When I withdraw 501 reais
-	Then a message shows saying "Can't withdraw more than account limit"
-
-
-User Story #003 Maximum Withdraw actions    
-----------------------------------------
-
-As a Bank Customer 
-I can withdraw the maximum of 800 reais per day no matter the ammount of withdraw activities 
-In order to keep my account safe from bad usage
-	
-	Given that I have done a first withdraw of 300 reais  
-	    AND I have a current account balance of 1000 reais 
-	When I withdraw 501 reais
-	Then a message shows saying "Maximum withdraw limit reached"
-
+To run this project @ Heroku
+----------------------------
+* Install [Heroku Client](https://devcenter.heroku.com/articles/heroku-cli) on your setup. 
+* Create a new remote to heroku: "heroku create choose-a-project-name". This will create a choose-a-project-name.herokuapp.com so you can access your app after deployment. If you only use a "heroku create", Heroku will create a slick name for you. 
+* Send the project to heroku: "git push heroku master" 
+* If something is not right, check heroku logs, using "heroku logs --tail"
+* You can test a sample using my install at https://bankaccount-travis.herokuapp.com 
