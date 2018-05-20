@@ -6,7 +6,7 @@
 	<property name="dir.classes" value="${dir.build}/classes" />
 	<property name="dir.jar" value="${dir.build}/jar" />
 
-	<property name="main-class" value="com.danielwildt.BankAccountConsole" />
+	<property name="main-class" value="com.danielwildt.console.BankAccountConsole" />
 
 	<path id="classpath.base" />
 	
