@@ -25,7 +25,23 @@ Run Maven Build + Spring Boot API (pom.xml)
   * add Account: "/add?name=51987654321&balance=500"
   * check balance: "/balance?name=51987654321"
   * withdraw: "withdraw?name=51987654321&value=200"
-* Default port is 8088. If you want to change, check resources/application.properties.
+  * if using curl for testing, use something like "curl \ --data-urlencode "name=51987654321" \ --data-urlencode "value=500" \ http://localhost:8088/add"
+* Default port is 8080. If you want to change, check resources/application.properties.
+
+Running this project using AWS Cloud9 IDE
+-----------------------------------------
+* Update yum and java and dependencies. [Reference](https://docs.aws.amazon.com/pt_br/cloud9/latest/user-guide/sample-java.html)
+  * I'm using Amazon Linux, so:
+    * update packages: sudo yum -y update
+    * install java 8: sudo yum -y install java-1.8.0-openjdk-devel
+    * update java version used: sudo update-alternatives --config java
+    * update javac version used: sudo update-alternatives --config javac
+    * install maven: 
+      * sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+      * sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+      * sudo yum install -y apache-maven
+    * now you can run mvn install and mvn spring-boot:run 
+
 
 To run this project @ Heroku
 ----------------------------
