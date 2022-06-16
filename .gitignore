@@ -28,6 +28,9 @@ hs_err_pid*
 .project
 .classpath
 
+# IntelliJ IDEA
+.idea/
+
 # MAC files
 .DS_Store
 
