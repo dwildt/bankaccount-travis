@@ -39,3 +39,6 @@ hs_err_pid*
 .settings/
 mvnw*
 
+# Gradle Related
+.gradle/
+

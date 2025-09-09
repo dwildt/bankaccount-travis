@@ -1,9 +1,12 @@
 language: java
-script: ant main
-addons:
+matrix:
+  include:
+    - script: ant main
+      addons:
         apt:
           sources:
             - ubuntu-toolchain-r-test
           packages:
             - ant
             - ant-optional
+    - script: ./gradlew build
