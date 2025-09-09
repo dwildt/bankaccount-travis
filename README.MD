@@ -8,10 +8,11 @@ Manage Bank Accounts. Simple Java project to show more about Test Driven Develop
 * Java
 * Ant
 * Maven 
+* Gradle
 * Spring Boot
 * Docker & Docker Compose
 * Heroku deploy
-* More to come (ant + ivy / cpd / pmd / coverage / other test approaches / gradle option)
+* More to come (ant + ivy / cpd / pmd / coverage / other test approaches)
 
 
 Run with Docker Compose (recommended)
@@ -38,6 +39,17 @@ Run Maven Build + Spring Boot API (pom.xml)
   * check balance: "/balance?name=51987654321"
   * withdraw: "withdraw?name=51987654321&value=200"
   * if using curl for testing, use something like "curl \ --data-urlencode "name=51987654321" \ --data-urlencode "value=500" \ http://localhost:8088/add"
+* Default port is 8080. If you want to change, check resources/application.properties.
+
+Run Gradle Build + Spring Boot API (build.gradle)
+------------------------------------------------
+* run tests: "./gradlew test"
+* build project: "./gradlew build"
+* run spring-boot API: "./gradlew bootRun"
+* Sample request:  
+  * add Account: "/add?name=51987654321&balance=500"
+  * check balance: "/balance?name=51987654321"
+  * withdraw: "withdraw?name=51987654321&value=200"
 * Default port is 8080. If you want to change, check resources/application.properties.
 
 Running this project using AWS Cloud9 IDE
