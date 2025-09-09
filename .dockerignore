@@ -1,0 +1,49 @@
+# Git
+.git
+.gitignore
+
+# CI/CD
+.travis.yml
+.github/
+
+# Documentation
+README.MD
+LICENSE
+
+# Build artifacts (excluding the JAR we need)
+target/classes
+target/test-classes
+target/generated-sources
+target/generated-test-sources
+target/maven-archiver
+target/maven-status
+target/surefire-reports
+*.war
+*.ear
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+
+# Ant
+build/
+dist/
+lib/
+build.xml
