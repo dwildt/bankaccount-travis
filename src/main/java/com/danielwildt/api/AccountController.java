@@ -30,7 +30,13 @@ public class AccountController {
     public String withdraw(String name, int value) {
     	AccountRepository ar = InMemoryAccountRepository.getInstance();
     	BankAccount ba = ar.findByName(name);
-    	ba.withdraw(value);
+    	if (ba == null) return "Account Not Found!";
+    	
+    	String withdrawResult = ba.withdraw(value);
+    	if(withdrawResult != null) {
+    		return withdrawResult;
+    	}
+    	
     	ar.add(ba);
     	return String.format("Greetings from Wildtech Bank!\nAccount Balance for Account %s is %s", ba.getName(), ba.getBalance());
     }
