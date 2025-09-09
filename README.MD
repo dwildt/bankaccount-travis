@@ -9,9 +9,21 @@ Manage Bank Accounts. Simple Java project to show more about Test Driven Develop
 * Ant
 * Maven 
 * Spring Boot
+* Docker & Docker Compose
 * Heroku deploy
 * More to come (ant + ivy / cpd / pmd / coverage / other test approaches / gradle option)
 
+
+Run with Docker Compose (recommended)
+-------------------------------------
+* Prerequisites: Docker and Docker Compose installed
+* Build and run: `docker compose up --build`
+* The application will be available at http://localhost:8080
+* Sample requests:  
+  * add Account: `curl "http://localhost:8080/add?name=51987654321&balance=500"`
+  * check balance: `curl "http://localhost:8080/balance?name=51987654321"`
+  * withdraw: `curl "http://localhost:8080/withdraw?name=51987654321&value=200"`
+* Stop: `docker compose down`
 
 Run Ant Build + Unit Tests (use build.xml)
 ------------------------------------------
